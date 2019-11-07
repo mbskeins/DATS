@@ -1,12 +1,26 @@
 <div class=" content">
-    <div class="dropdown">
-        <select>
-            <option value="volvo">PT</option>
-            <option value="saab">Class2</option>
-            <option value="mercedes">Class3</option>
-            <option value="audi">Class4</option>
-          </select>
-      </div>
+    <form>
+        <div align="center">
+            <div class="form-group">
+
+                <label for="exampleInputEmail1">Enter Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </div>
+            <mat-form-field>
+                    <select matNativeControl required>
+                        <option value="volvo">Event</option>
+                        <option value="saab">LLab</option>
+                        <option value="mercedes">Alt LLab</option>
+                        <option value="audi">PT</option>
+                    </select>
+                </mat-form-field>
+                <br>
+            <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+    </form>
 
 </div>
-

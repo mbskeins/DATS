@@ -11,4 +11,11 @@ export class NotificationsComponent implements OnInit {
   constructor(private toastr: ToastrService, private apiService: ApiService) {}
 
   ngOnInit() {}
+
+  addEmail(newEmail: string){
+    console.log("sent from component: ")
+    console.log(newEmail);
+
+    this.apiService.createUser(newEmail);
+  }
 }

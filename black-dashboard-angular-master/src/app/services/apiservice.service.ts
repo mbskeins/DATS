@@ -13,7 +13,10 @@ export class ApiService {
     //     return this.http.get("put url in here");
     // }
 
-    // createUser(){
-    //     return this.http.post(url, payload)
-    // }
+    createUser(payload: any){
+
+        console.log("sent from service: ")
+        console.log(payload);
+        //return this.http.post(url, payload)
+    }
 }

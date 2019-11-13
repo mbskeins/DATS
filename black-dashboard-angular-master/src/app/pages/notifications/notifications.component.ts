@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/services/apiservice.service';
 
 @Component({
@@ -8,7 +7,7 @@ import { ApiService } from 'src/app/services/apiservice.service';
 })
 export class NotificationsComponent implements OnInit {
 
-  constructor(private toastr: ToastrService, private apiService: ApiService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit() {}
 

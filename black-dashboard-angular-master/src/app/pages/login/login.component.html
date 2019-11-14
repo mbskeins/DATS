@@ -1,0 +1,29 @@
+<div class="example-container">
+  <div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-2">
+      <div class="row">
+        <h1>DATS</h1>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <input matInput placeholder="Email">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <button mat-raised-button color="primary" (click)="routeNow()">Log In</button>
+      </div>
+    </div>
+    <div class="col-md-5"></div>
+  </div>
+
+</div>

@@ -25,6 +25,7 @@ import {
   MatInputModule,
   MatFormFieldModule
 } from '@angular/material';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -46,7 +47,7 @@ import {
     MatFormFieldModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent,],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent,LoginComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

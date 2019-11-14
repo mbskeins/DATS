@@ -3,7 +3,7 @@
     <div class=" col-md-12">
       <div class=" card">
         <div class=" card-header">
-          <h5 class=" title">Edit Profile</h5>
+          <h5 class=" title">Matt's Profile</h5>
         </div>
         <div class=" card-body">
           <form>
@@ -29,34 +29,63 @@
               </div>
             </div>
             <div class=" row">
-              <div class=" col-md-6 pr-md-1">
+              <div class=" col-md-4 pr-md-1">
                 <div class=" form-group">
                   <label> First Name </label>
                   <input class=" form-control" placeholder="Company" type="text" value="Mike" />
                 </div>
               </div>
-              <div class=" col-md-6 pl-md-1">
+              <div class=" col-md-4 pl-md-1">
                 <div class=" form-group">
                   <label> Last Name </label>
                   <input class=" form-control" placeholder="Last Name" type="text" value="Andrew" />
                 </div>
               </div>
+              <div class=" col-md-4 pr-md-1">
+                  <div class=" form-group">
+                    <label> Phone Number </label>
+                    <input class=" form-control" placeholder="Company" type="text" value="555-555-5555" />
+                  </div>
+                </div>
             </div>
           </form>
         </div>
-        <div class="col-md-4">
-            <h4>Attendance Progress</h4>
-          </div>
         <div class="row">
-          <div class="col-md-1">
-            <p align="center">90%</p>
+          <div class="col-md-2"></div>
+          <div class="col-md-5" align="center">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h4>PT Progress</h4>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-1">
+                    <p align="center">90%</p>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-progress-spinner mode="determinate" value="90"></mat-progress-spinner>
+                  </div>
+                </div>
           </div>
-          <div class="col-md-4">
-            <mat-progress-spinner mode="determinate" value="90"></mat-progress-spinner>
-          </div>
+          <br>
+          <div class="col-md-5" align="center">
+            <div class="row">
+              <div class="col-md-6">
+                  <h4>LLAB Progress</h4>
+                </div>
+            </div>
+                <div class="row">
+                  <div class="col-md-1">
+                    <p align="center">60%</p>
+                  </div>
+                  <div class="col-md-4">
+                    <mat-progress-spinner mode="determinate" value="60"></mat-progress-spinner>
+                  </div>
+                </div>
+            </div>
         </div>
         <div class=" card-footer">
-            <br>
+          <br>
         </div>
       </div>
     </div>

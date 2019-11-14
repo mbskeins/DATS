@@ -14,7 +14,6 @@ export class ApiService {
     // }
 
     createUser(payload: any){
-
         console.log("sent from service: ")
         console.log(payload);
         //return this.http.post(url, payload)

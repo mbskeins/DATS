@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 declare interface RouteInfo {
   path: string;
@@ -46,11 +46,13 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
-
+  @Input() permission: string;
   constructor() {}
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    console.log(this.permission);
+    console.log(this.menuItems);
   }
   isMobileMenu() {
     if (window.innerWidth > 991) {

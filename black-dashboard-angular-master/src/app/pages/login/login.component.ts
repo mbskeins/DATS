@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { state } from '@angular/animations';
 
 @Component({
   selector: 'app-login',
@@ -9,13 +10,52 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   hide = true;
-  
-  constructor(private router: Router) {}
+  user1 = {
+    username: "matt",
+    password: "matt",
+    permission: "cadet",
+  }
+
+  user2 = {
+    username: "jared",
+    password: "jared",
+    permission: "attendance",
+  }
+
+  user3 = {
+    username: "ohm",
+    password: "ohm",
+    permission: "admin",
+  }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  routeNow(){
-    this.router.navigate(['dashboard']);
+  routeNow(username, password) {
+    if (username == "matt") {
+      if (password == "matt") {
+        //console.log(username, password);
+        this.router.navigateByUrl('/user', { state: { user: this.user1.username, permission: this.user1.permission } });
+      }
+    }
+    else if (username == "jared") {
+      if (password == "jared") {
+        //console.log(username, password);
+        this.router.navigateByUrl('/user', { state: { user: this.user2.username, permission: this.user2.permission } });
+      }
+    }
+    else if (username == "ohm") {
+      if (password == "ohm") {
+        //console.log(username, password);
+        this.router.navigateByUrl('/dashboard', { state: { user: this.user3.username, permission: this.user3.permission } });
+      }
+    }
+    else{
+      window.alert("Username or password was incorrect please try again");
+    }
+
+    //history.pushState({data: {test: "test"}}, '', '');
   }
 }

@@ -7,12 +7,12 @@
       </div>
       <div class="row">
         <mat-form-field>
-          <input matInput placeholder="Email">
+          <input #username matInput placeholder="Email">
         </mat-form-field>
       </div>
       <div class="row">
         <mat-form-field>
-          <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+          <input #password matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
           <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
             [attr.aria-pressed]="hide">
             
@@ -20,7 +20,7 @@
         </mat-form-field>
       </div>
       <div class="row">
-        <button mat-raised-button color="primary" (click)="routeNow()">Log In</button>
+        <button mat-raised-button color="primary" (click)="routeNow(username.value, password.value)">Log In</button>
       </div>
     </div>
     <div class="col-md-5"></div>

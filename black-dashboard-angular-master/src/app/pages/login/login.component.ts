@@ -31,9 +31,11 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+
   }
 
   routeNow(username, password) {
+    /*
     if (username == "matt") {
       if (password == "matt") {
         //console.log(username, password);
@@ -55,6 +57,8 @@ export class LoginComponent implements OnInit {
     else{
       window.alert("Username or password was incorrect please try again");
     }
+    */
+   this.router.navigateByUrl('/dashboard', { state: { user: this.user3.username, permission: this.user3.permission } });
 
     //history.pushState({data: {test: "test"}}, '', '');
   }

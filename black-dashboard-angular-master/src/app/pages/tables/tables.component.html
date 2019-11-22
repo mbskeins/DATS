@@ -4,24 +4,24 @@
             <div class="col-md-6">
                 <div class="form-group">
 
-                <label for="exampleInputEmail1">Enter Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter email">
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            </div>
+                    <label for="exampleInputEmail1">Enter Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="Enter email">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                </div>
             </div>
             <mat-form-field>
-                    <select matNativeControl required>
-                        <option value="volvo">Event</option>
-                        <option value="saab">LLab</option>
-                        <option value="mercedes">Alt LLab</option>
-                        <option value="audi">PT</option>
-                    </select>
-                </mat-form-field>
-                <br>
-            <button type="submit" class="btn btn-danger">Submit</button>
+                <select matNativeControl required>
+                    <option value="volvo">Event</option>
+                    <option value="saab">LLab</option>
+                    <option value="mercedes">Alt LLab</option>
+                    <option value="audi">PT</option>
+                </select>
+            </mat-form-field>
+            <br>
+            <button type="submit" (click)="getProfiles()" class="btn btn-danger">Submit</button>
         </div>
     </form>
 

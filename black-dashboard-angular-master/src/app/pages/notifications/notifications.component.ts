@@ -17,16 +17,21 @@ export class NotificationsComponent implements OnInit {
 
     this.apiService.createUser(newEmail);
   }
-  createUser(emailaddresscreateuser, phonenumbercreateuser, firstnamecreateuser, lastnamecreateuser, majorcreateuser, schoolcreateuser ){
+  createUser(usernamecreateuser, passwordcreateuser, emailaddresscreateuser, phonenumbercreateuser, firstnamecreateuser, lastnamecreateuser, majorcreateuser, schoolcreateuser ){
     var payload = {
-      emailAddress: emailaddresscreateuser,
-      phoneNumber: phonenumbercreateuser,
-      firstName: firstnamecreateuser,
-      lastName: lastnamecreateuser,
+      username: usernamecreateuser,
+      password: passwordcreateuser,
+      email: emailaddresscreateuser,
+      firstname: firstnamecreateuser,
+      lastname: lastnamecreateuser,
+      cellphone: phonenumbercreateuser,
       major: majorcreateuser,
-      school: schoolcreateuser,
+      schoolId: 14
     }
 
     console.log(payload);
+
+   // http.post("http://127.0.0.1:8000/auth/v1/register", payload)
+    this.apiService.createUser(payload);
   }
 }

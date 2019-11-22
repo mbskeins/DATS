@@ -7,15 +7,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-    // getUser(){
-    //     return this.http.get("put url in here");
-    // }
+  // getUser(){
+  //     return this.http.get("put url in here");
+  // }
 
-    createUser(payload: any){
-        console.log("sent from service: ")
-        console.log(payload);
-        //return this.http.post(url, payload)
-    }
+  createUser(payload: any) {
+    var url = "http://127.0.0.1:8000/auth/v1/register";
+    console.log("sent from service: ");
+    //console.log(payload);
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+  }
+
+  getUsers() {
+    // return values for typescipt funcs 
+    var profiles;
+    console.log("service layer");
+    var url = "http://127.0.0.1:8000/api/v1/userProfiles";
+    console.log(this.http.get(url).subscribe(data => {
+
+
+      profiles = data;
+      console.log(profiles);
+
+    }));
+  
+  }
 }

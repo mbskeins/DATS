@@ -6,7 +6,13 @@ import { ApiService } from 'src/app/services/apiservice.service';
   templateUrl: "tables.component.html"
 })
 export class TablesComponent implements OnInit {
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  getProfiles() {
+    console.log("pressed");
+    this.apiService.getUsers();
+  }
+
 }

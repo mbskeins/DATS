@@ -17,4 +17,16 @@ export class NotificationsComponent implements OnInit {
 
     this.apiService.createUser(newEmail);
   }
+  createUser(emailaddresscreateuser, phonenumbercreateuser, firstnamecreateuser, lastnamecreateuser, majorcreateuser, schoolcreateuser ){
+    var payload = {
+      emailAddress: emailaddresscreateuser,
+      phoneNumber: phonenumbercreateuser,
+      firstName: firstnamecreateuser,
+      lastName: lastnamecreateuser,
+      major: majorcreateuser,
+      school: schoolcreateuser,
+    }
+
+    console.log(payload);
+  }
 }

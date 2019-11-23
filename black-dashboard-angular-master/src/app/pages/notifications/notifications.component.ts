@@ -51,8 +51,7 @@ export class NotificationsComponent implements OnInit {
       viceCommander: vicecommanderID,
       squadron: squadronID
     }
-    console.log(payload);
-    //this.apiService.createFlight(payload);
+    this.apiService.createFlight(payload);
 
   }
 

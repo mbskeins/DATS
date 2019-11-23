@@ -43,4 +43,17 @@ export class NotificationsComponent implements OnInit {
     this.apiService.createClass(payload);
   }
 
+
+  createFlight(name, commanderID, vicecommanderID, squadronID){
+    var payload = {
+      name: name, 
+      commander: commanderID,
+      viceCommander: vicecommanderID,
+      squadron: squadronID
+    }
+    console.log(payload);
+    //this.apiService.createFlight(payload);
+
+  }
+
 }

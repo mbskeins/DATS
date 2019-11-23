@@ -41,4 +41,11 @@ export class ApiService {
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
   }
 
+  createFlight(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/flights/";
+    console.log(payload);
+    console.log("at api service");
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+  }
+
 }

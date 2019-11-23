@@ -34,4 +34,13 @@ export class NotificationsComponent implements OnInit {
    // http.post("http://127.0.0.1:8000/auth/v1/register", payload)
     this.apiService.createUser(payload);
   }
+
+
+  createClass(name){
+    var payload = {
+      name : name
+    }
+    this.apiService.createClass(payload);
+  }
+
 }

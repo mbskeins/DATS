@@ -55,4 +55,15 @@ export class NotificationsComponent implements OnInit {
 
   }
 
+  createEvent(dateTimeCreateEvent, nameCreateEvent, locationCreateEvent,){
+    var payload = {
+      dateTime: dateTimeCreateEvent,
+      name: nameCreateEvent,
+      location: locationCreateEvent,
+      isLeadLab: false,
+      isArchived: true
+    }
+    this.apiService.createEvent(payload);
+  }
+
 }

@@ -78,6 +78,7 @@ export class ApiService {
     }));
   }
 
+<<<<<<< HEAD
   addCadre(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/cadres/";
     console.log("at api service");
@@ -88,6 +89,24 @@ export class ApiService {
     var url = "http://127.0.0.1:8000/api/v1/groups/";
     console.log("at api service");
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+=======
+
+  createSchool(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/schools";
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+
+  }
+
+  createSquadron(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/squadrons/";
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+  }
+
+  createWing(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/wings/";
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+
+>>>>>>> 3c93635f8efa00de135ee280850896473c1086b7
   }
 
 }

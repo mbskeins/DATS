@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from 'src/app/services/apiservice.service';
+import { AuthService } from 'src/app/services/authservice.service';
 
 @Component({
   selector: "app-notifications",
@@ -7,7 +8,7 @@ import { ApiService } from 'src/app/services/apiservice.service';
 })
 export class NotificationsComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private authService: AuthService) { }
 
   ngOnInit() { }
 

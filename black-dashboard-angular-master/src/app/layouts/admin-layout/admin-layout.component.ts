@@ -40,14 +40,14 @@ export class AdminLayoutComponent implements OnInit {
   }
   ngOnInit() {
 
-    this.state$ = this.activatedRoute.paramMap
-      .pipe(map(() => window.history.state))
+    // this.state$ = this.activatedRoute.paramMap
+    //   .pipe(map(() => window.history.state))
 
-    if(window.history.state.user == undefined){
-      this.router.navigateByUrl('/login');
-    }
-    else{
+    // if(window.history.state.user == undefined){
+    //   this.router.navigateByUrl('/login');
+    // }
+    // else{
        this.user = window.history.state;
-    }
+    //}
   }
 }

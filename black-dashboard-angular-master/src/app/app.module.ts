@@ -26,6 +26,8 @@ import {
   MatFormFieldModule
 } from '@angular/material';
 import { LoginComponent } from './pages/login/login.component';
+import { DeclineComponent } from './pages/decline/decline.component';
+import { SuccessComponent } from './pages/success/success.component';
 
 
 @NgModule({
@@ -47,7 +49,7 @@ import { LoginComponent } from './pages/login/login.component';
     MatFormFieldModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent,LoginComponent],
+  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, DeclineComponent, SuccessComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

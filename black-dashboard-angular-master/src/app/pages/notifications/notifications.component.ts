@@ -38,7 +38,8 @@ export class NotificationsComponent implements OnInit {
 
   createClass(name){
     var payload = {
-      name : name
+      name : name,
+      isArchived: false
     }
     this.apiService.createClass(payload);
   }

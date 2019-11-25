@@ -90,4 +90,16 @@ export class NotificationsComponent implements OnInit {
     this.apiService.createSquadron(payload);
   }
 
+  createWing(name, commander, viceCommander, inspectorGeneral){
+    var payload = {
+        "name": name,
+        "isArchived": true,
+        "commander": commander,
+        "viceCommander": viceCommander,
+        "inspectorGeneral": inspectorGeneral
+    }
+    console.log(payload);
+    this.apiService.createWing(payload);
+  }
+
 }

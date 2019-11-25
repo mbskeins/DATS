@@ -175,16 +175,48 @@
             placeholder="Enter commander id">
         </div>
         <div class="form-group">
-            <label for="exampleInputEmail1">Deputy Commander ID</label>
-            <input #deputy class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-              placeholder="Enter deputy id">
-          </div>
-          <div class="form-group">
-              <label for="exampleInputEmail1">Group ID</label>
-              <input #group class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter group id">
-            </div>
+          <label for="exampleInputEmail1">Deputy Commander ID</label>
+          <input #deputy class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter deputy id">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Group ID</label>
+          <input #group class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter group id">
+        </div>
         <button (click)="createSquadron(squadron.value, commander.value, deputy.value, group.value)" type="submit"
+          class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Create Wing
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Wing name</label>
+          <input #wing class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter squadron name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Commander ID</label>
+          <input #commander class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter commander id">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Vice Commander ID</label>
+          <input #viceCommander class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter vice commander id">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Inspector General</label>
+          <input #inspectorGeneral class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter inspetor general id">
+        </div>
+        <button (click)="createWing(wing.value, commander.value, viceCommander.value, inspectorGeneral.value)" type="submit"
           class="btn btn-primary">Submit</button>
       </form>
     </mat-expansion-panel>

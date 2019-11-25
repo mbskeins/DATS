@@ -88,6 +88,11 @@ export class ApiService {
   createSquadron(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/squadrons/";
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+  }
+
+  createWing(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/wings/";
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
 
   }
 

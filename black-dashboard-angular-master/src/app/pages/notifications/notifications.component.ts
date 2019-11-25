@@ -39,7 +39,7 @@ export class NotificationsComponent implements OnInit {
   createClass(name){
     var payload = {
       name : name,
-      isArchived: false
+      isArchived: true
     }
     this.apiService.createClass(payload);
   }
@@ -53,7 +53,6 @@ export class NotificationsComponent implements OnInit {
       squadron: squadronID
     }
     this.apiService.createFlight(payload);
-
   }
 
   createEvent(dateTimeCreateEvent, nameCreateEvent, locationCreateEvent,){
@@ -67,4 +66,22 @@ export class NotificationsComponent implements OnInit {
     this.apiService.createEvent(payload);
   }
 
+  addCadre(userCreateCadre){
+    var payload = {
+      user: 0,
+      isArchived: false,
+    }
+    this.apiService.addCadre(payload);
+  }
+
+  addGroup(nameGroup, commanderGroup,  DCommanderGroup, wingGroup){
+    var payload = {
+      name: nameGroup,
+      isArchived: false,
+      commander: commanderGroup,
+      deputyCommander: DCommanderGroup,
+      wing: wingGroup
+    }
+    this.apiService.addGroups(payload);
+  }
 }

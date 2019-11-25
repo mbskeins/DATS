@@ -78,4 +78,16 @@ export class ApiService {
     }));
   }
 
+  addCadre(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/cadres/";
+    console.log("at api service");
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+  }
+
+  addGroups(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/groups/";
+    console.log("at api service");
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+  }
+
 }

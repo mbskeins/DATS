@@ -134,5 +134,51 @@
           type="submit" class="btn btn-primary">Submit</button>
       </form>
     </mat-expansion-panel>
+    <br>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add Cadre
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">User ID</label>
+          <input #userCreateCadre class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button (click)="addCadre(userCreateCadre.value)"
+          type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
+    <br>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Add Group
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input #nameGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Commander ID</label>
+          <input #commanderGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Deputy Commander ID</label>
+          <input #DCommanderGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Wing Number</label>
+          <input #wingGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button (click)="addGroup(nameGroup.value, commanderGroup.value,  DCommanderGroup.value, wingGroup.value)"
+          type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
   </mat-accordion>
 </div>

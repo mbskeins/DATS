@@ -38,7 +38,7 @@ export class NotificationsComponent implements OnInit {
 
   createClass(name) {
     var payload = {
-      name : name,
+      name: name,
       isArchived: true
     }
     this.apiService.createClass(payload);
@@ -67,7 +67,7 @@ export class NotificationsComponent implements OnInit {
   }
 
 
-  addCadre(userCreateCadre){
+  addCadre(userCreateCadre) {
     var payload = {
       user: 0,
       isArchived: false,
@@ -75,7 +75,7 @@ export class NotificationsComponent implements OnInit {
     this.apiService.addCadre(payload);
   }
 
-  addGroup(nameGroup, commanderGroup,  DCommanderGroup, wingGroup){
+  addGroup(nameGroup, commanderGroup, DCommanderGroup, wingGroup) {
     var payload = {
       name: nameGroup,
       isArchived: false,
@@ -85,4 +85,40 @@ export class NotificationsComponent implements OnInit {
     }
     this.apiService.addGroups(payload);
   }
+
+  createSchool(schoolName, location) {
+    var payload = {
+      "name": schoolName,
+      "location": location,
+      "isArchived": true
+    }
+    console.log(payload);
+    this.apiService.createSchool(payload);
+
+  }
+
+  createSquadron(name, commander, deputy, group) {
+    var payload = {
+      "name": name,
+      "isArchived": true,
+      "commander": commander,
+      "deputyCommander": deputy,
+      "group": group
+    }
+    console.log(payload);
+    this.apiService.createSquadron(payload);
+  }
+
+  createWing(name, commander, viceCommander, inspectorGeneral) {
+    var payload = {
+      "name": name,
+      "isArchived": true,
+      "commander": commander,
+      "viceCommander": viceCommander,
+      "inspectorGeneral": inspectorGeneral
+    }
+    console.log(payload);
+    this.apiService.createWing(payload);
+  }
+
 }

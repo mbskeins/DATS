@@ -80,7 +80,13 @@ export class ApiService {
 
 
   createSchool(payload: any){
-    var url = "http://127.0.0.1:8000/api/v1/schools/";
+    var url = "http://127.0.0.1:8000/api/v1/schools";
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+
+  }
+
+  createSquadron(payload: any){
+    var url = "http://127.0.0.1:8000/api/v1/squadrons/";
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
 
   }

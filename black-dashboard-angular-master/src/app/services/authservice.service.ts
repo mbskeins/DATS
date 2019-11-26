@@ -40,7 +40,7 @@ export class AuthService {
               observer.next();
             },
             (error: any) => {
-              observer.error("Failed to user's roles. Please try again. If the problem persists please contact system admin.");
+              observer.error("Failed to get user's roles. Please try again. If the problem persists please contact system admin.");
             });
           } else {
             observer.error("Token failed to parse. Please try again. If the problem persists please contact system admin.");

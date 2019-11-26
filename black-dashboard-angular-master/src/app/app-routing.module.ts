@@ -6,6 +6,8 @@ import { Routes, RouterModule } from "@angular/router";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { LoginComponent } from './pages/login/login.component';
+import { SuccessComponent } from './pages/success/success.component';
+import { DeclineComponent } from './pages/decline/decline.component';
 
 
 const routes: Routes = [
@@ -35,12 +37,16 @@ const routes: Routes = [
     ]
   },
   {
-    path: "**",
-    redirectTo: "login"
-  },
-  {
     path:"login",
     component: LoginComponent,
+  },
+  {
+    path:"success",
+    component: SuccessComponent,
+  },
+  {
+    path:"decline",
+    component: DeclineComponent,
   }
 ];
 

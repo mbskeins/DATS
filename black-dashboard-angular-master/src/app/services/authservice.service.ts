@@ -16,20 +16,16 @@ export class AuthService {
     this.baseUrl = "http://127.0.0.1:8000/";
   }
 
-  getUser(): Observable<User>{
-    return new Observable((observer) => {
+  // return nulls if user not session expired or not signed in
+  getUser(): User{
       var userString = window.sessionStorage.getItem('user');
       var user = JSON.parse(userString);
-      if(user == null){      
-        observer.error("Not logged in.");
-      } else if(user.expirationTimeInUtc <= new Date().getTime()){
-        this.logout().subscribe(data => {
-          observer.error("Session has expired. Logged user out.");
-        }, error => observer.error("Session has expired. Logged user out."))
+      if(user === null || user.expirationTimeInUtc <= new Date().getTime()){
+        window.sessionStorage.clear();
+        return null;
       }else {
-        observer.next(user);
+        return user;
       }
-    });
   }
 
   login(username: string, password: string): Observable<any>{

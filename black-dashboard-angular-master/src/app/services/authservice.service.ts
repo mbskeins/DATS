@@ -65,7 +65,7 @@ export class AuthService {
     return new Observable((observer) => {  
       var headers = this.getAuthHeaders();
       var url = this.baseUrl + "auth/v1/logout";
-      this.http.post<string[]>(url, {headers: headers}).subscribe((data: any) => {
+      this.http.post<string[]>(url, {}, {headers: headers}).subscribe((data: any) => {
         window.sessionStorage.clear();
         observer.next();
       },

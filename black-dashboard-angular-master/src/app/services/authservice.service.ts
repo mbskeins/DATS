@@ -22,10 +22,6 @@ export class AuthService {
     return JSON.parse(userString);
   }
 
-  private setUser(user: User): void{
-    window.sessionStorage.setItem('user', JSON.stringify(user));
-  }
-
   login(username: string, password: string): Observable<any>{
     return new Observable((observer) => {  
       var loginUrl = this.baseUrl + "auth/v1/login";
@@ -100,6 +96,10 @@ export class AuthService {
     catch(Error){
         return null;
     }
+  }
+
+  private setUser(user: User): void{
+    window.sessionStorage.setItem('user', JSON.stringify(user));
   }
 
 //   createUser(payload: any) {

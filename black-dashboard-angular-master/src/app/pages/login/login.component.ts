@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(username: string, password: string): void{
-    this.authService.login(username, password).subscribe(bool =>{
+    this.authService.login(username, password).subscribe(nothing =>{
       console.log("logged in yo");
       this.authService.getUser().subscribe(user => {
         console.log(user);

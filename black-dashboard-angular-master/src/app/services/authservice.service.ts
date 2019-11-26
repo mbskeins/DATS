@@ -27,4 +27,10 @@ export class AuthService {
 //     }));
 //   }
 
+  resetPassword(payload: any){
+    var url = "http://127.0.0.1:8000/auth/v1/resetPassword";
+    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+
+  }
+
 }

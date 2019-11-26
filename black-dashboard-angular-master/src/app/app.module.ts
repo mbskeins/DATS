@@ -28,6 +28,7 @@ import {
 import { LoginComponent } from './pages/login/login.component';
 import { DeclineComponent } from './pages/decline/decline.component';
 import { SuccessComponent } from './pages/success/success.component';
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 
 
 @NgModule({
@@ -49,7 +50,15 @@ import { SuccessComponent } from './pages/success/success.component';
     MatFormFieldModule,
     ToastrModule.forRoot()
   ],
-  declarations: [AppComponent, AdminLayoutComponent, AuthLayoutComponent, LoginComponent, DeclineComponent, SuccessComponent],
+  declarations: [
+    AppComponent,
+    AdminLayoutComponent,
+    AuthLayoutComponent,
+    LoginComponent,
+    DeclineComponent,
+    SuccessComponent,
+    ForgotpasswordComponent
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

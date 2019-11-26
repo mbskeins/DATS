@@ -8,6 +8,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { LoginComponent } from './pages/login/login.component';
 import { SuccessComponent } from './pages/success/success.component';
 import { DeclineComponent } from './pages/decline/decline.component';
+import { ForgotpasswordComponent } from './pages/forgotpassword/forgotpassword.component';
 
 
 const routes: Routes = [
@@ -47,7 +48,12 @@ const routes: Routes = [
   {
     path:"decline",
     component: DeclineComponent,
+  },
+  {
+    path:"forgot",
+    component: ForgotpasswordComponent,
   }
+
 ];
 
 @NgModule({

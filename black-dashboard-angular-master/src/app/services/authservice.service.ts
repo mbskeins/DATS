@@ -33,12 +33,7 @@ export class AuthService {
         (data: any) => {
           var token = this.getDecodedAccessToken(data.token);
           if(token != null){
-            var user = new User();
-            user.id = token.id;
-            user.accessToken = data.token;
-            user.email = token.email;
-            user.firstname = token.firstname;
-            user.lastname = token.lastname
+            var user = new User(token.email, token.id, token.firstname, token.lastname, data.token, token.exp);
             this.getAllRoles(user.accessToken).subscribe((roles: string[]) => {
               user.roles = roles;
               this.setUser(user);

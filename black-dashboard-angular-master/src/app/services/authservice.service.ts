@@ -20,11 +20,13 @@ export class AuthService {
     return new Observable((observer) => {
       var userString = window.sessionStorage.getItem('user');
       var user = JSON.parse(userString);
-      if(user.expirationTimeInUtc <= new Date().getTime() || user === null){
+      if(user == null){      
+        observer.error("Not logged in.");
+      } else if(user.expirationTimeInUtc <= new Date().getTime()){
         this.logout().subscribe(data => {
           observer.error("Session has expired. Logged user out.");
-        })
-      } else {
+        }, error => observer.error("Session has expired. Logged user out."))
+      }else {
         observer.next(user);
       }
     });

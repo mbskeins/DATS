@@ -53,6 +53,14 @@ export class TablesComponent implements OnInit {
   }
 
   takeAttendance(profile: any, event: any) {
-   console.log(profile.id, event);
+   console.log(profile.id, 1);
+
+   var payload = {
+    wasPresent: true,
+    isArchived: false,
+    event: 1,
+    user: profile.id
+   }
+   this.apiService.addAttendences(payload);
   }
 }

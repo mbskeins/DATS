@@ -58,9 +58,10 @@ export class ApiService {
   }
 
   addAttendences(payload: any){
+    var headers = this.authService.getAuthHeaders();
     var url = "http://127.0.0.1:8000/api/v1/attendences/";
     console.log("at api service");
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
   getAttendences(){

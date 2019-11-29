@@ -57,12 +57,13 @@ export class NotificationsComponent implements OnInit {
   }
 
   createEvent(dateTimeCreateEvent, nameCreateEvent, locationCreateEvent, ) {
+    console.log(Date.now());
     var payload = {
-      dateTime: dateTimeCreateEvent,
+      dateTime: "2012-09-04 06:00:00.000000-08:00",
       name: nameCreateEvent,
       location: locationCreateEvent,
       isLeadLab: false,
-      isArchived: true
+      isArchived: false,
     }
     this.apiService.createEvent(payload);
   }

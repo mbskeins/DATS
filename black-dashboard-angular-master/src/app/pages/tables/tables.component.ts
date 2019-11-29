@@ -21,6 +21,10 @@ export class TablesComponent implements OnInit {
   constructor(private apiService: ApiService, private authService: AuthService, private changeDetectorRefs: ChangeDetectorRef) { }
   $userList;
   userlist;
+
+  $eventList;
+  eventList;
+
   headers: HttpHeaders
   dataSource;
   columnsToDisplay = ['firstname', 'lastname', 'cellphone'];
@@ -28,7 +32,13 @@ export class TablesComponent implements OnInit {
   ngOnInit() { 
     this.changeDetectorRefs.detectChanges();
     this.headers = this.authService.getAuthHeaders();
+    this.$eventList = this.apiService.getEvents(this.headers);
     this.$userList = this.apiService.getUsers(this.headers);
+
+    this.$eventList.subscribe(data => {
+      this.eventList = data;
+      console.log(this.eventList);
+    });
 
     this.$userList.subscribe(data => {
       this.userlist = data;

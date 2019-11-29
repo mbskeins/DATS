@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { AuthService } from './authservice.service';
 
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
   // getUser(){
   //     return this.http.get("put url in here");
@@ -44,18 +45,16 @@ export class ApiService {
   }
 
   createEvent(payload: any){
+    var headers = this.authService.getAuthHeaders();
     var url = "http://127.0.0.1:8000/api/v1/events/";
     console.log("at api service");
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
-  getEvents(){
+  getEvents(headers: HttpHeaders): Observable<any> {
     var events;
     var url = "http://127.0.0.1:8000/api/v1/events/";
-    console.log(this.http.get(url).subscribe(data => {
-      events = data;
-      console.log(events);
-    }));
+    return this.http.get(url, {headers: headers});
   }
 
   addAttendences(payload: any){

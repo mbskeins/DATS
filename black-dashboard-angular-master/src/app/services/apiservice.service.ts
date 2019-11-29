@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 @Injectable({
@@ -20,18 +21,12 @@ export class ApiService {
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
   }
 
-  getUsers() {
+  getUsers(headers: HttpHeaders): Observable<any> {
     // return values for typescipt funcs 
     var profiles;
     console.log("service layer");
     var url = "http://127.0.0.1:8000/api/v1/userProfiles";
-    console.log(this.http.get(url).subscribe(data => {
-
-
-      profiles = data;
-      console.log(profiles);
-
-    }));
+    return this.http.get(url, {headers: headers});
   }
 
   createClass(payload: any){
@@ -89,7 +84,7 @@ export class ApiService {
     console.log("at api service");
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
   }
-  
+
   createSchool(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/schools";
     console.log(this.http.post(url, payload).subscribe(data => console.log(data)));

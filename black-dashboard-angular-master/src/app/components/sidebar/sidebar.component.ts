@@ -51,8 +51,8 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
-    console.log(this.permission);
-    console.log(this.menuItems);
+    // console.log(this.permission);
+    // console.log(this.menuItems);
   }
   isMobileMenu() {
     if (window.innerWidth > 991) {

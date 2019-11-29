@@ -19,9 +19,7 @@ export class ForgotpasswordComponent implements OnInit {
     var payload = {
       email: email
     }
-
     this.authService.resetPassword(payload);
-
   }
 
 }

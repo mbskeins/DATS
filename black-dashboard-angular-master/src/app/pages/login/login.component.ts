@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { state } from '@angular/animations';
 import { AuthService } from 'src/app/services/authservice.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,6 +30,8 @@ export class LoginComponent implements OnInit {
     permission: "admin",
   }
 
+  user;
+
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
@@ -38,7 +41,14 @@ export class LoginComponent implements OnInit {
   login(username: string, password: string): void{
     this.authService.login(username, password).subscribe(nothing =>{
       console.log("logged in yo");
-      console.log(this.authService.getUser());
+      this.user = this.authService.getUser();
+      console.log(this.user);
+      for(var i = 0; i < this.user.roles.length; i++){
+        if(this.user.roles[i] != "Cadet"){
+          console.log(this.user.roles[i]);
+        }
+      }
+      this.router.navigateByUrl('/dashboard');
     }, (error: string) => {
       console.log(error);
     })
@@ -68,7 +78,7 @@ export class LoginComponent implements OnInit {
       window.alert("Username or password was incorrect please try again");
     }
     */
-   this.router.navigateByUrl('/dashboard', { state: { user: this.user3.username, permission: this.user3.permission } });
+   
 
     //history.pushState({data: {test: "test"}}, '', '');
   }

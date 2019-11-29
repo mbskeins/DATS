@@ -7,19 +7,7 @@
 </div>
 <div class="sidebar-wrapper">
   <div class="nav">
-
-    <div *ngIf="permission == 'cadet'">
-      <li routerLinkActive="active" class="{{ menuItems[2] }} nav-item">
-        <a [routerLink]="[menuItems[2].path]">
-          <i class="tim-icons  {{ menuItems[2].icon }}"></i>
-          <p>{{ menuItems[2].title }}</p>
-        </a>
-      </li>
-    </div>
-
-
-
-    <div *ngIf="permission == 'admin'">
+    <div >
 
       <li routerLinkActive="active" class="{{ menuItems[0] }} nav-item">
         <a [routerLink]="[menuItems[0].path]">

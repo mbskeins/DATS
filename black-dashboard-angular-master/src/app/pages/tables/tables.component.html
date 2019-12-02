@@ -1,16 +1,4 @@
 <div class=" content">
-    <form>
-        <div align="center">
-            <mat-form-field>
-                <select #eventList matNativeControl required>
-                    <option value="volvo">Event</option>
-                    <option value="saab">LLab</option>
-                    <option value="mercedes">Alt LLab</option>
-                    <option value="audi">PT</option>
-                </select>
-            </mat-form-field>
-        </div>
-    </form>
 
 
     <div>
@@ -26,7 +14,7 @@
                     <div class="example-element-detail"
                         [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
                         <div class="example-element-description">
-                        <button type="submit" (click)="takeAttendance(element, eventList.value)" class="btn btn-danger">Present</button>
+                        <button type="submit" (click)="takeAttendance(element, eventCode.value)" class="btn btn-danger">Present</button>
                         </div>
                     </div>
                 </td>
@@ -41,4 +29,15 @@
         </table>
     </div>
     <br><br><br><br><br><br><br><br><br>
+
+
+    <form>
+        <div align="center">
+            <mat-form-field>
+                <select #eventCode matNativeControl required>
+                    <option *ngFor="let event of eventList" [value]="event.id"> {{event['name']}} {{ event['id'] }} </option>
+                </select>
+            </mat-form-field>
+        </div>
+    </form>
 </div>

@@ -29,7 +29,7 @@ export class TablesComponent implements OnInit {
   dataSource;
   columnsToDisplay = ['firstname', 'lastname', 'cellphone'];
 
-  ngOnInit() { 
+  ngOnInit() {
     this.changeDetectorRefs.detectChanges();
     this.headers = this.authService.getAuthHeaders();
     this.$eventList = this.apiService.getEvents(this.headers);
@@ -47,20 +47,23 @@ export class TablesComponent implements OnInit {
     });
   }
 
-  setTableData(){
+  setTableData() {
     this.dataSource = this.userlist;
     console.log(this.dataSource);
   }
 
-  takeAttendance(profile: any, event: any) {
-   console.log(profile.id, 1);
+  takeAttendance(profile: any, eventID: any) {
+    console.log("Profile ID: ")
+    console.log(profile.id);
+    console.log("Event ID: ")
+    console.log(eventID);
 
-   var payload = {
-    wasPresent: true,
-    isArchived: false,
-    event: 1,
-    user: profile.id
-   }
-   this.apiService.addAttendences(payload);
+    var payload = {
+      wasPresent: true,
+      isArchived: false,
+      event: eventID,
+      user: profile.id
+    }
+    this.apiService.addAttendences(payload);
   }
 }

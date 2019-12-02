@@ -13,17 +13,19 @@ export class ApiService {
 
 
   createUser(payload: any) {
+    var headers = this.authService.getAuthHeaders();
+
     var url = "http://127.0.0.1:8000/auth/v1/register";
     console.log("sent from service: ");
     //console.log(payload);
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    console.log(this.http.post(url, payload, {headers: headers} ).subscribe(data => console.log(data)));
   }
 
   getUsers(headers: HttpHeaders): Observable<any> {
     // return values for typescipt funcs 
     var profiles;
     console.log("service layer");
-    var url = "http://127.0.0.1:8000/api/v1/userProfiles";
+    var url = "http://127.0.0.1:8000/api/v1/userProfiles/";
     return this.http.get(url, {headers: headers});
   }
 
@@ -38,7 +40,9 @@ export class ApiService {
     var url = "http://127.0.0.1:8000/api/v1/flights/";
     console.log(payload);
     console.log("at api service");
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    var headers = this.authService.getAuthHeaders();
+
+    console.log(this.http.post(url, payload, {headers: headers} ).subscribe(data => console.log(data)));
   }
 
   createEvent(payload: any){
@@ -85,7 +89,7 @@ export class ApiService {
   }
 
   createSchool(payload: any){
-    var url = "http://127.0.0.1:8000/api/v1/schools";
+    var url = "http://127.0.0.1:8000/api/v1/schools/";
     var headers = this.authService.getAuthHeaders();
     console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
 

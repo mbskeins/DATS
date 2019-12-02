@@ -11,9 +11,6 @@ export class ApiService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  // getUser(){
-  //     return this.http.get("put url in here");
-  // }
 
   createUser(payload: any) {
     var url = "http://127.0.0.1:8000/auth/v1/register";
@@ -45,9 +42,9 @@ export class ApiService {
   }
 
   createEvent(payload: any){
-    var headers = this.authService.getAuthHeaders();
     var url = "http://127.0.0.1:8000/api/v1/events/";
     console.log("at api service");
+    var headers = this.authService.getAuthHeaders();
     console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
@@ -76,30 +73,34 @@ export class ApiService {
   addCadre(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/cadres/";
     console.log("at api service");
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    var headers = this.authService.getAuthHeaders();
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
   addGroups(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/groups/";
     console.log("at api service");
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    var headers = this.authService.getAuthHeaders();
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
   createSchool(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/schools";
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    var headers = this.authService.getAuthHeaders();
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
 
   }
 
   createSquadron(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/squadrons/";
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
+    var headers = this.authService.getAuthHeaders();
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
   createWing(payload: any){
     var url = "http://127.0.0.1:8000/api/v1/wings/";
-    console.log(this.http.post(url, payload).subscribe(data => console.log(data)));
-
+    var headers = this.authService.getAuthHeaders();
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
   }
 
 }

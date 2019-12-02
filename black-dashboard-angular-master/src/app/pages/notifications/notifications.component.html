@@ -1,5 +1,4 @@
 <div class=" content">
-  <br>
   <mat-accordion>
     <mat-expansion-panel>
       <mat-expansion-panel-header>
@@ -55,6 +54,50 @@
     <mat-expansion-panel>
       <mat-expansion-panel-header>
         <mat-panel-title>
+          Create Cadre
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">User ID</label>
+          <input #userCreateCadre class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button (click)="addCadre(userCreateCadre.value)" type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
+    <br>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Create Group
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input #nameGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Commander ID</label>
+          <input #commanderGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Deputy Commander ID</label>
+          <input #DCommanderGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Wing Number</label>
+          <input #wingGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        </div>
+        <button (click)="addGroup(nameGroup.value, commanderGroup.value,  DCommanderGroup.value, wingGroup.value)"
+          type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
           Create Class
         </mat-panel-title>
       </mat-expansion-panel-header>
@@ -103,79 +146,6 @@
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
         </div>
         <button (click)="createFlight(name.value, commanderID.value, vicecommanderID.value, squadronID.value)"
-          type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </mat-expansion-panel>
-    <br>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Create Event
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <!-- put stuff for the panel here -->
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Date</label>
-          <input #dateTimeCreateEvent class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter username">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Name</label>
-          <input #nameCreateEvent class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter password">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Location</label>
-          <input #locationCreateEvent class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
-        </div>
-        <button (click)="createEvent(dateTimeCreateEvent.value, nameCreateEvent.value, locationCreateEvent.value  )"
-          type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </mat-expansion-panel>
-    <br>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Add Cadre
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <!-- put stuff for the panel here -->
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">User ID</label>
-          <input #userCreateCadre class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <button (click)="addCadre(userCreateCadre.value)" type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </mat-expansion-panel>
-    <br>
-    <mat-expansion-panel>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Add Group
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <!-- put stuff for the panel here -->
-      <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Name</label>
-          <input #nameGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Commander ID</label>
-          <input #commanderGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Deputy Commander ID</label>
-          <input #DCommanderGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Wing Number</label>
-          <input #wingGroup class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        </div>
-        <button (click)="addGroup(nameGroup.value, commanderGroup.value,  DCommanderGroup.value, wingGroup.value)"
           type="submit" class="btn btn-primary">Submit</button>
       </form>
     </mat-expansion-panel>
@@ -262,6 +232,34 @@
             placeholder="Enter inspetor general id">
         </div>
         <button (click)="createWing(wing.value, commander.value, viceCommander.value, inspectorGeneral.value)"
+          type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
+    <br>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Create Event
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Date</label>
+          <input #dateTimeCreateEvent class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter username">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input #nameCreateEvent class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Location</label>
+          <input #locationCreateEvent class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+        </div>
+        <button (click)="createEvent(dateTimeCreateEvent.value, nameCreateEvent.value, locationCreateEvent.value  )"
           type="submit" class="btn btn-primary">Submit</button>
       </form>
     </mat-expansion-panel>

@@ -40,7 +40,7 @@ export class NotificationsComponent implements OnInit {
   createClass(name) {
     var payload = {
       name: name,
-      isArchived: true
+      isArchived: false
     }
     this.apiService.createClass(payload);
   }
@@ -71,7 +71,7 @@ export class NotificationsComponent implements OnInit {
 
   addCadre(userCreateCadre) {
     var payload = {
-      user: 0,
+      user: userCreateCadre,
       isArchived: false,
     }
     this.apiService.addCadre(payload);

@@ -123,4 +123,15 @@ export class NotificationsComponent implements OnInit {
     this.apiService.createWing(payload);
   }
 
+  approveUser(userApprove){
+
+    console.log("hit");
+    var payload = {
+      "username": userApprove
+    }
+    console.log(payload);
+    this.apiService.approveUser(payload);
+
+  }
+
 }

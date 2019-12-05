@@ -21,6 +21,14 @@ export class ApiService {
     console.log(this.http.post(url, payload, {headers: headers} ).subscribe(data => console.log(data)));
   }
 
+  approveUser(payload: any){
+    var url = "http://127.0.0.1:8000/auth/v1/approveAccount";
+    console.log("sent from service: ");
+    //console.log(payload);
+    var headers = this.authService.getAuthHeaders();
+    console.log(this.http.post(url, payload, {headers: headers}).subscribe(data => console.log(data)));
+  }
+
   getUsers(headers: HttpHeaders): Observable<any> {
     // return values for typescipt funcs 
     var profiles;

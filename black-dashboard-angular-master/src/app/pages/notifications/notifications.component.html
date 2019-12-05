@@ -66,6 +66,23 @@
         <button (click)="addCadre(userCreateCadre.value)" type="submit" class="btn btn-primary">Submit</button>
       </form>
     </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Approve User
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <!-- put stuff for the panel here -->
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Username</label>
+          <input #userApprove class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter username">
+        </div>
+        <button (click)="approveUser(userApprove.value)" type="submit"
+          class="btn btn-primary">Submit</button>
+      </form>
+    </mat-expansion-panel>
     <br>
     <mat-expansion-panel>
       <mat-expansion-panel-header>

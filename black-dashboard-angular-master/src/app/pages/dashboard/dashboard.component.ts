@@ -47,6 +47,10 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
   displayedColumns2: string[] = ['name', 'progress'];
 
+  ptPercent;
+  llabPercent;
+
+
   dataSource;
   dataSource2: MatTableDataSource<EventData>;
   $userList;
@@ -110,6 +114,11 @@ export class DashboardComponent implements OnInit {
       console.log("what");
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  loadData(){
+    this.ptPercent = Math.round(Math.random() * (100 - 70) + 70).toString();
+    this.llabPercent=  Math.round(Math.random() * (100 - 70) + 70).toString();
   }
 
   // for average event attendance

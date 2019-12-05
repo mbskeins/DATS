@@ -7,20 +7,32 @@
 </div>
 <div class="sidebar-wrapper">
   <div class="nav">
-    <div >
+    <div>
 
-      <li routerLinkActive="active" class="{{ menuItems[0] }} nav-item">
-        <a [routerLink]="[menuItems[0].path]">
-          <i class="tim-icons  {{ menuItems[0].icon }}"></i>
-          <p>{{ menuItems[0].title }}</p>
-        </a>
-      </li>
-      <li routerLinkActive="active" class="{{ menuItems[1] }} nav-item">
-        <a [routerLink]="[menuItems[1].path]">
-          <i class="tim-icons  {{ menuItems[1].icon }}"></i>
-          <p>{{ menuItems[1].title }}</p>
-        </a>
-      </li>
+    
+
+      <div *ngIf="userPermission == 'admin@example.com'">
+
+        <li routerLinkActive="active" class="{{ menuItems[0] }} nav-item">
+          <a [routerLink]="[menuItems[0].path]">
+            <i class="tim-icons  {{ menuItems[0].icon }}"></i>
+            <p>{{ menuItems[0].title }}</p>
+          </a>
+        </li>
+        <li routerLinkActive="active" class="{{ menuItems[1] }} nav-item">
+          <a [routerLink]="[menuItems[1].path]">
+            <i class="tim-icons  {{ menuItems[1].icon }}"></i>
+            <p>{{ menuItems[1].title }}</p>
+          </a>
+        </li>
+  
+        <li routerLinkActive="active" class="{{ menuItems[3] }} nav-item">
+          <a [routerLink]="[menuItems[3].path]">
+            <i class="tim-icons  {{ menuItems[3].icon }}"></i>
+            <p>{{ menuItems[3].title }}</p>
+          </a>
+        </li>
+      </div>
 
       <li routerLinkActive="active" class="{{ menuItems[2] }} nav-item">
         <a [routerLink]="[menuItems[2].path]">
@@ -29,30 +41,10 @@
         </a>
       </li>
 
-      <li routerLinkActive="active" class="{{ menuItems[3] }} nav-item">
-        <a [routerLink]="[menuItems[3].path]">
-          <i class="tim-icons  {{ menuItems[3].icon }}"></i>
-          <p>{{ menuItems[3].title }}</p>
-        </a>
-      </li>
-    </div>
-
-    <div *ngIf="permission == 'attendance'">
-      <li routerLinkActive="active" class="{{ menuItems[2] }} nav-item">
-        <a [routerLink]="[menuItems[2].path]">
-          <i class="tim-icons  {{ menuItems[2].icon }}"></i>
-          <p>{{ menuItems[2].title }}</p>
-        </a>
-      </li>
-
-      <li routerLinkActive="active" class="{{ menuItems[3] }} nav-item">
-        <a [routerLink]="[menuItems[3].path]">
-          <i class="tim-icons  {{ menuItems[3].icon }}"></i>
-          <p>{{ menuItems[3].title }}</p>
-        </a>
-      </li>
 
     </div>
+
+
 
   </div>
 </div>

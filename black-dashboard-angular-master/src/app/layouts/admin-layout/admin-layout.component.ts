@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { AuthService } from 'src/app/services/authservice.service';
 
 @Component({
   selector: "app-admin-layout",
@@ -13,7 +14,9 @@ export class AdminLayoutComponent implements OnInit {
   state$: Observable<object>;
   public user;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
+  userPermission;
+
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private authService: AuthService) { }
 
   changeSidebarColor(color) {
     var sidebar = document.getElementsByClassName('sidebar')[0];
@@ -47,7 +50,16 @@ export class AdminLayoutComponent implements OnInit {
     //   this.router.navigateByUrl('/login');
     // }
     // else{
-       this.user = window.history.state;
     //}
+    this.user = this.authService.getUser();
+
+    console.log(this.user.email);
+
+    this.userPermission = this.user.email;
+    // admin@example.com
+
+    if (this.userPermission != 'admin@example.com'){
+      this.router.navigateByUrl('/user');
+    }
   }
 }

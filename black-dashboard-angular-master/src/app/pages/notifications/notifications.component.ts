@@ -56,7 +56,7 @@ export class NotificationsComponent implements OnInit {
     this.apiService.createFlight(payload);
   }
 
-  createEvent(dateTimeCreateEvent, nameCreateEvent, locationCreateEvent, ) {
+  createEvent(nameCreateEvent, locationCreateEvent, ) {
     console.log(Date.now());
     var payload = {
       dateTime: "2012-09-04 06:00:00.000000-08:00",
